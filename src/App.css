@@ -16,4 +16,102 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  width: 100vw;
+}
+
+h1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 41px;
+  color: white;
+  text-align: bottom;
+}
+
+.Blue-background {
+  background-color: #112d4e;
+}
+
+.Black-background {
+  background-color: black;
+}
+
+h4 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 21px;
+}
+
+.get-started {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 100px;
+  left: 0px;
+  top: 422px;
+  justify-content: center;
+  align-items: center;
+  padding: 0% 5% 0% 3%;
+}
+.button-get-started {
+  position: absolute;
+  width: 100vw;
+  height: 323px;
+  left: 0px;
+  top: 521px;
+  padding: 0% 7% 0% 5%;
+}
+.main-catchline {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 100px;
+  left: 0px;
+  top: 322px;
+  padding: 0% 5% 0% 3%;
+}
+.main-title {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 323px;
+  left: 0px;
+  top: 0px;
+}
+
+.text-center-padding {
+  align-self: center;
+  padding: 0% 2% 0% 2%;
+}
+
+.justify-end {
+  align-self: flex-end;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+.center-justified {
+  text-align: justify;
+  text-align-last: center;
+}
+
+button {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.settings-title {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 100px;
+  left: 0px;
+  top: 0px;
 }
