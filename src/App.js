@@ -78,7 +78,6 @@ class App extends React.Component {
       addiGFA: false,
       strucChanges: false,
       extFacade: false,
-      customizedRules: [],
     });
   };
 
