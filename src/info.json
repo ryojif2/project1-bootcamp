@@ -156,11 +156,6 @@
     ],
     [
       {
-        "option": "tree conserv",
-        "category": "external",
-        "description": "NPARKS - To obtain permission to fall any tree of girth more than 1.0m within development site."
-      },
-      {
         "option": "non-option",
         "category": "external",
         "description": "LTA - To ensure Meter Compartment is located away from common party wall if accesses are paired."
@@ -184,21 +179,6 @@
         "option": "non-option",
         "category": "external",
         "description": "URA - To ensure that maximum height of boundary walls is 1.8m regardless of land profile."
-      },
-      {
-        "option": "height 2",
-        "category": "overall",
-        "description": "URA - To ensure that the maximum overall height is 12.0m at the top roof level."
-      },
-      {
-        "option": "height 3",
-        "category": "overall",
-        "description": "URA - To ensure that the maximum overall height is 15.5m at the top roof level."
-      },
-      {
-        "option": "gfa 5000",
-        "category": "overall",
-        "description": "BCA - To calculate and choose appropriate materials for the base requirements in Code of Environmental Sustainability. To ensure base requirements are met."
       },
       {
         "option": "non-gcba",
@@ -259,143 +239,18 @@
         "option": "solar",
         "category": "internal",
         "description": "URA - To ensure that solar panels are not raised more than 1m above roof level. Maximum height restrictions apply to solar panels. If installed on flat roofs, to ensure that access is only for maintenance."
-      },
-      {
-        "option": "lift",
-        "category": "internal",
-        "description": "BCA - To ensure compliance to SS 550."
-      },
-      {
-        "option": "lift",
-        "category": "internal",
-        "description": "URA - To ensure that lift shafts and motor rooms are included in GFA calculation."
-      },
-      {
-        "option": "glass barrier",
-        "category": "others",
-        "description": "BCA - If glass is used as barrier, to ensure laminated glass is used and glass withstands loading."
       }
     ],
     [
-      {
-        "option": "tree conserv",
-        "category": "external",
-        "description": "NPARKS - To obtain permission to fall any tree of girth more than 1.0m within development site."
-      },
-      {
-        "option": "non-option",
-        "category": "external",
-        "description": "LTA - To ensure Meter Compartment is located away from common party wall if accesses are paired."
-      },
-      {
-        "option": "non-option",
-        "category": "external",
-        "description": "LTA - To ensure gates for vehicle and pedestrians do not swing outwards."
-      },
-      {
-        "option": "frontage width 8",
-        "category": "external",
-        "description": "LTA - To ensure Clear Access Width is maximum 5.5m."
-      },
-      {
-        "option": "frontage width less",
-        "category": "external",
-        "description": "LTA - To ensure Clear Access Width is maximum 4.5m."
-      },
-      {
-        "option": "non-option",
-        "category": "external",
-        "description": "URA - To ensure that maximum height of boundary walls is 1.8m regardless of land profile."
-      },
-      {
-        "option": "height 2",
-        "category": "overall",
-        "description": "URA - To ensure that the maximum overall height is 12.0m at the top roof level."
-      },
-      {
-        "option": "height 3",
-        "category": "overall",
-        "description": "URA - To ensure that the maximum overall height is 15.5m at the top roof level."
-      },
-      {
-        "option": "gfa 5000",
-        "category": "overall",
-        "description": "BCA - To calculate and choose appropriate materials for the base requirements in Code of Environmental Sustainability. To ensure base requirements are met."
-      },
       {
         "option": "gcba",
         "category": "overall",
         "description": "URA - To ensure site coverage is within 40%. "
       },
       {
-        "option": "non-option",
-        "category": "overall",
-        "description": "URA - To ensure that the top floor covered area does not impede into the envelope control 45-degree line. "
-      },
-      {
-        "option": "non-option",
-        "category": "overall",
-        "description": "NPARKS - To ensure only allowable structures are built within green buffer."
-      },
-      {
-        "option": "non-option",
-        "category": "overall",
-        "description": "NPARKS - Underground services are not allowed within green buffer. If underground services are to cross, they are to be minimum 2.0m below ground level, and minimum 2m away from centre of tree."
-      },
-      {
         "option": "gcba",
         "category": "overall",
         "description": "URA - To ensure main building and terrace are set back 3m away from common boundary, and carporch and main roof eaves are set back 1.6m away from common boundary."
-      },
-      {
-        "option": "non-option",
-        "category": "internal",
-        "description": "PUB - In general, to ensure Minimum Platform Level is 300mm above adjacent road/ground level."
-      },
-      {
-        "option": "basement attic",
-        "category": "internal",
-        "description": "PUB - Minimum Crest Level: To ensure that opening to basement is more than Minimum Crest Level (i.e. 150mm above Minimum Platform level)."
-      },
-      {
-        "option": "basement attic",
-        "category": "internal",
-        "description": "URA - To ensure that 2m tree planting strip has at least 2m soil depth. To ensure that technical requirements are not affected. To ensure no adverse impact to surrounding properties. To ensure basement is set back 2m from common boundary."
-      },
-      {
-        "option": "basement attic",
-        "category": "internal",
-        "description": "URA - To ensure basement requirements are complied with all internal areas below Minimum Platform Level. These areas are to be fully sealed without external openings."
-      },
-      {
-        "option": "basement attic",
-        "category": "internal",
-        "description": "SCDF - Means of Escape: To ensure basement is compartmented and separated from upper stories. 1st floor is to be compartment floor. Basement level is to discharge directly to external space."
-      },
-      {
-        "option": "solar",
-        "category": "internal",
-        "description": "SCDF - To provide cat ladder/portable sturdy ladder for access to roof solar panels. To ensure modules chosen pass fire test with minimum Class C rating. To provide manual emergency shut off system at the switch room and AC power."
-      },
-      {
-        "option": "solar",
-        "category": "internal",
-        "description": "URA - To ensure that solar panels are not raised more than 1m above roof level. Maximum height restrictions apply to solar panels. If installed on flat roofs, to ensure that access is only for maintenance."
-      },
-      {
-        "option": "lift",
-        "category": "internal",
-        "description": "BCA - To ensure compliance to SS 550."
-      },
-      {
-        "option": "lift",
-        "category": "internal",
-        "description": "URA - To ensure that lift shafts and motor rooms are included in GFA calculation."
-      },
-      {
-        "option": "glass barrier",
-        "category": "others",
-        "description": "BCA - If glass is used as barrier, to ensure laminated glass is used and glass withstands loading."
       }
     ]
   ]

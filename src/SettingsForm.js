@@ -299,7 +299,6 @@ export default class SettingsForm extends React.Component {
             {/* <button onClick={(e) => this.props.onFormsubmit(e)}>Submit</button> */}
           </div>
         )}
-        <p>this is the SettingsForm.</p>
         <button onClick={() => this.props.onFormReset()}>
           Return to Main Page
         </button>

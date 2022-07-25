@@ -29,6 +29,7 @@ class App extends React.Component {
       addiGFA: false,
       strucChanges: false,
       extFacade: false,
+      // customizedRules: [],
     };
   }
 
@@ -77,6 +78,7 @@ class App extends React.Component {
       addiGFA: false,
       strucChanges: false,
       extFacade: false,
+      customizedRules: [],
     });
   };
 
@@ -147,7 +149,30 @@ class App extends React.Component {
           </div>
           {/* <div>{console.log(this.state.typeOfWorks)}</div> */}
           <div>
-            {this.state.showResults ? <ResultsPage info={infoImport} /> : null}
+            {this.state.showResults ? (
+              <ResultsPage
+                info={infoImport}
+                ShowMain={this.state.showMain}
+                TypeOfWorks={this.state.typeOfWorks}
+                ShowResults={this.state.showResults}
+                buildingType={buildingType}
+                maxStorey={maxStorey}
+                proposedGFA={this.state.proposedGFA}
+                frontageWidth={this.state.frontageWidth}
+                gcba={this.state.gcba}
+                belowMPL={this.state.belowMPL}
+                basementAttic={this.state.basementAttic}
+                solarPanel={this.state.solarPanel}
+                lift={this.state.lift}
+                glassBarr={this.state.glassBarr}
+                treeConserv={this.state.treeConserv}
+                addiGFA={this.state.addiGFA}
+                strucChanges={this.state.strucChanges}
+                extFacade={this.state.extFacade}
+                customizedRules={this.state.customizedRules}
+                onFormReset={(e) => this.handleReset(e)}
+              />
+            ) : null}
           </div>
           {/* <p>
             Edit <code>src/App.js</code> and save to reload.
