@@ -28,9 +28,9 @@ export default class GenerateList extends React.Component {
     const PutIntoList = (input) => {
       const description = input.description;
       return (
-        <div>
+        <div className="table-alternate-row">
           <tr>
-            <td>
+            <td className="checkbox-spacing">
               <input
                 type="checkbox"
                 id={description}
@@ -38,7 +38,7 @@ export default class GenerateList extends React.Component {
                 onChange={this.handleCheck}
               />
             </td>
-            <td>
+            <td className="padding-8">
               <span className={this.isChecked(description)}>{description}</span>
             </td>
           </tr>
@@ -61,9 +61,9 @@ export default class GenerateList extends React.Component {
         }
       } else if (!this.props.wantedkey2 && !this.props.wantedkey1) {
         rows.push(
-          <div>
+          <div className="table-alternate-row">
             <tr>
-              <td>
+              <td className="checkbox-spacing">
                 <input
                   type="checkbox"
                   id={regulation}
@@ -71,7 +71,7 @@ export default class GenerateList extends React.Component {
                   onChange={this.handleCheck}
                 />
               </td>
-              <td>
+              <td className="padding-8">
                 <span className={this.isChecked(regulation)}>{regulation}</span>
               </td>
             </tr>
@@ -82,7 +82,7 @@ export default class GenerateList extends React.Component {
     });
 
     return (
-      <Container>
+      <Container className="no-padding">
         <div>
           <form>{rows}</form>
         </div>

@@ -34,16 +34,30 @@ export default class ResultsPage extends React.Component {
   };
 
   handleFormSubmit = (e) => {
-    const updatedUserList = [
-      ...this.state.customizedRules,
-      this.state.userInput,
-    ];
+    e.preventDefault();
+    if (this.state.userInput !== "") {
+      const updatedUserList = [
+        ...this.state.customizedRules,
+        this.state.userInput,
+      ];
+      console.log(updatedUserList);
+      this.setState({
+        showResults: true,
+        overlayPage: false,
+        customizedRules: updatedUserList,
+      });
+    }
     this.setState({
       showResults: true,
       overlayPage: false,
-      customizedRules: updatedUserList,
     });
-    e.preventDefault();
+  };
+
+  handleExitOverlay = (e) => {
+    this.setState({
+      showResults: true,
+      overlayPage: false,
+    });
   };
 
   // fs is inbuilt into node js.
@@ -52,244 +66,259 @@ export default class ResultsPage extends React.Component {
   //add to end of string to apend the new rule.
   //fswritefile.
   render() {
+    console.log(this.state.customizedRules);
+    console.log(this.state.userInput);
     return (
-      <Container>
+      <Container className="Black-background">
         <Container>
-          <Container className="settings-title + Black-background">
+          <Container className="results-summary + Blue-background">
+            <GenerateSummary
+              info={this.props.info}
+              typeOfWorks={this.props.TypeOfWorks}
+              buildingType={this.props.buildingType}
+              maxStorey={this.props.maxStorey}
+              proposedGFA={this.props.proposedGFA}
+              frontageWidth={this.props.frontageWidth}
+              gcba={this.props.gcba}
+              belowMPL={this.props.belowMPL}
+              basementAttic={this.props.basementAttic}
+              solarPanel={this.props.solarPanel}
+              lift={this.props.lift}
+              glassBarr={this.props.glassBarr}
+              treeConserv={this.props.treeConserv}
+              addiGFA={this.props.addiGFA}
+              strucChanges={this.props.strucChanges}
+              extFacade={this.props.extFacade}
+            />
+          </Container>
+          <Container className="results-title + Black-background">
             <h1 className="justify-end">Regulations</h1>
           </Container>
-          <p>{console.log(this.props.info)}</p>
-          <p>{console.log(this.props.info.info.info[0])}</p>
-          <GenerateSummary
-            info={this.props.info}
-            typeOfWorks={this.props.typeOfWorks}
-            buildingType={this.props.buildingType}
-            maxStorey={this.props.maxStorey}
-            proposedGFA={this.props.proposedGFA}
-            frontageWidth={this.props.frontageWidth}
-            gcba={this.props.gcba}
-            belowMPL={this.props.belowMPL}
-            basementAttic={this.props.basementAttic}
-            solarPanel={this.props.solarPanel}
-            lift={this.props.lift}
-            glassBarr={this.props.glassBarr}
-            treeConserv={this.props.treeConserv}
-            addiGFA={this.props.addiGFA}
-            strucChanges={this.props.strucChanges}
-            extFacade={this.props.extFacade}
-          />
-          <p>{console.log(this.state.overlayPage)}</p>
-          <h4>
-            <u>External Elements</u>
-          </h4>
-          <GenerateList
-            info={this.props.info.info.info[0]}
-            wantedkey1="external"
-          />
-          {this.props.treeConserv && (
+          <Container className="results-body">
+            <h4 className="Black-background + align-left-text + padding-13 + margin-center">
+              <u>External Elements</u>
+            </h4>
             <GenerateList
-              info={this.props.info.info.info[1]}
+              info={this.props.info.info.info[0]}
               wantedkey1="external"
-              wantedkey2="tree conserv"
             />
-          )}
-          {this.props.TypeOfWorks === "New Construction" && (
-            <GenerateList
-              info={this.props.info.info.info[2]}
-              wantedkey1="external"
-              wantedkey2="non-option"
-            />
-          )}
-          {this.props.TypeOfWorks === "New Construction" &&
-            this.props.frontageWidth >= 8 && (
+            {this.props.treeConserv && (
+              <GenerateList
+                info={this.props.info.info.info[1]}
+                wantedkey1="external"
+                wantedkey2="tree conserv"
+              />
+            )}
+            {this.props.TypeOfWorks === "New Construction" && (
               <GenerateList
                 info={this.props.info.info.info[2]}
                 wantedkey1="external"
-                wantedkey2="frontage width 8"
+                wantedkey2="non-option"
               />
             )}
-          {this.props.TypeOfWorks === "New Construction" &&
-            this.props.frontageWidth < 8 && (
+            {this.props.TypeOfWorks === "New Construction" &&
+              this.props.frontageWidth >= 8 && (
+                <GenerateList
+                  info={this.props.info.info.info[2]}
+                  wantedkey1="external"
+                  wantedkey2="frontage width 8"
+                />
+              )}
+            {this.props.TypeOfWorks === "New Construction" &&
+              this.props.frontageWidth < 8 && (
+                <GenerateList
+                  info={this.props.info.info.info[2]}
+                  wantedkey1="external"
+                  wantedkey2="frontage width less"
+                />
+              )}
+            <h4 className="Black-background + align-left-text + padding-13 + margin-center">
+              <u>Overall Parameters of Main Building</u>
+            </h4>
+            <GenerateList
+              info={this.props.info.info.info[0]}
+              wantedkey1="overall"
+            />
+            {this.props.maxStorey === "2" && (
               <GenerateList
-                info={this.props.info.info.info[2]}
-                wantedkey1="external"
-                wantedkey2="frontage width less"
+                info={this.props.info.info.info[1]}
+                wantedkey1="overall"
+                wantedkey2="height 2"
               />
             )}
-          <h4>
-            <u>Overall Parameters of Main Building</u>
-          </h4>
-          <GenerateList
-            info={this.props.info.info.info[0]}
-            wantedkey1="overall"
-          />
-          {this.props.maxStorey === "2" && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
-              wantedkey1="overall"
-              wantedkey2="height 2"
-            />
-          )}
-          {this.props.maxStorey === "3" && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
-              wantedkey1="overall"
-              wantedkey2="height 3"
-            />
-          )}
-          {this.props.proposedGFA >= 5000 && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
-              wantedkey1="overall"
-              wantedkey2="gfa 5000"
-            />
-          )}
-          {this.props.TypeOfWorks === "A&A" && this.props.addiGFA && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
-              wantedkey1="overall"
-              wantedkey2="gfa addi"
-            />
-          )}
-          {this.props.TypeOfWorks === "A&A" && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
-              wantedkey1="overall"
-              wantedkey2="non-option"
-            />
-          )}
-          {this.props.TypeOfWorks === "New Construction" &&
-            !this.props.gcba && (
+            {this.props.maxStorey === "3" && (
+              <GenerateList
+                info={this.props.info.info.info[1]}
+                wantedkey1="overall"
+                wantedkey2="height 3"
+              />
+            )}
+            {this.props.proposedGFA >= 5000 && (
+              <GenerateList
+                info={this.props.info.info.info[1]}
+                wantedkey1="overall"
+                wantedkey2="gfa 5000"
+              />
+            )}
+            {this.props.TypeOfWorks === "A&A" && this.props.addiGFA && (
+              <GenerateList
+                info={this.props.info.info.info[1]}
+                wantedkey1="overall"
+                wantedkey2="gfa addi"
+              />
+            )}
+            {this.props.TypeOfWorks === "A&A" && (
+              <GenerateList
+                info={this.props.info.info.info[1]}
+                wantedkey1="overall"
+                wantedkey2="non-option"
+              />
+            )}
+            {this.props.TypeOfWorks === "New Construction" &&
+              !this.props.gcba && (
+                <GenerateList
+                  info={this.props.info.info.info[2]}
+                  wantedkey1="overall"
+                  wantedkey2="non-gcba"
+                />
+              )}
+            {this.props.TypeOfWorks === "New Construction" &&
+              this.props.gcba && (
+                <GenerateList
+                  info={this.props.info.info.info[3]}
+                  wantedkey1="overall"
+                  wantedkey2="gcba"
+                />
+              )}
+            {this.props.TypeOfWorks === "New Construction" && (
               <GenerateList
                 info={this.props.info.info.info[2]}
                 wantedkey1="overall"
-                wantedkey2="non-gcba"
+                wantedkey2="non-option"
               />
             )}
-          {this.props.TypeOfWorks === "New Construction" && this.props.gcba && (
+            <h4 className="Black-background + align-left-text + padding-13 + margin-center">
+              <u>Internal Elements of Main Building</u>
+            </h4>
             <GenerateList
-              info={this.props.info.info.info[3]}
-              wantedkey1="overall"
-              wantedkey2="gcba"
-            />
-          )}
-          {this.props.TypeOfWorks === "New Construction" && (
-            <GenerateList
-              info={this.props.info.info.info[2]}
-              wantedkey1="overall"
-              wantedkey2="non-option"
-            />
-          )}
-          <h4>
-            <u>Internal Elements of Main Building</u>
-          </h4>
-          <GenerateList
-            info={this.props.info.info.info[0]}
-            wantedkey1="internal"
-          />
-          {this.props.TypeOfWorks === "A&A" && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
+              info={this.props.info.info.info[0]}
               wantedkey1="internal"
-              wantedkey2="non-option"
             />
-          )}
-          {this.props.TypeOfWorks === "A&A" && this.props.basementAttic && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
-              wantedkey1="internal"
-              wantedkey2="basement attic"
-            />
-          )}
-          {this.props.TypeOfWorks === "A&A" && this.props.solarPanel && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
-              wantedkey1="internal"
-              wantedkey2="solar"
-            />
-          )}
-          {this.props.TypeOfWorks === "New Construction" && (
-            <GenerateList
-              info={this.props.info.info.info[2]}
-              wantedkey1="internal"
-              wantedkey2="non-option"
-            />
-          )}
-          {this.props.TypeOfWorks === "New Construction" &&
-            this.props.basementAttic && (
+            {this.props.TypeOfWorks === "A&A" && (
               <GenerateList
-                info={this.props.info.info.info[2]}
+                info={this.props.info.info.info[1]}
+                wantedkey1="internal"
+                wantedkey2="non-option"
+              />
+            )}
+            {this.props.TypeOfWorks === "A&A" && this.props.basementAttic && (
+              <GenerateList
+                info={this.props.info.info.info[1]}
                 wantedkey1="internal"
                 wantedkey2="basement attic"
               />
             )}
-          {this.props.TypeOfWorks === "New Construction" &&
-            this.props.solarPanel && (
+            {this.props.TypeOfWorks === "A&A" && this.props.solarPanel && (
               <GenerateList
-                info={this.props.info.info.info[2]}
+                info={this.props.info.info.info[1]}
                 wantedkey1="internal"
                 wantedkey2="solar"
               />
             )}
-          {this.props.lift && (
+            {this.props.TypeOfWorks === "New Construction" && (
+              <GenerateList
+                info={this.props.info.info.info[2]}
+                wantedkey1="internal"
+                wantedkey2="non-option"
+              />
+            )}
+            {this.props.TypeOfWorks === "New Construction" &&
+              this.props.basementAttic && (
+                <GenerateList
+                  info={this.props.info.info.info[2]}
+                  wantedkey1="internal"
+                  wantedkey2="basement attic"
+                />
+              )}
+            {this.props.TypeOfWorks === "New Construction" &&
+              this.props.solarPanel && (
+                <GenerateList
+                  info={this.props.info.info.info[2]}
+                  wantedkey1="internal"
+                  wantedkey2="solar"
+                />
+              )}
+            {this.props.lift && (
+              <GenerateList
+                info={this.props.info.info.info[1]}
+                wantedkey1="internal"
+                wantedkey2="lift"
+              />
+            )}
+            <h4 className="Black-background + align-left-text + padding-13 + margin-center">
+              <u>Other Elements</u>
+            </h4>
             <GenerateList
-              info={this.props.info.info.info[1]}
-              wantedkey1="internal"
-              wantedkey2="lift"
-            />
-          )}
-          <h4>
-            <u>Other Elements</u>
-          </h4>
-          <GenerateList
-            info={this.props.info.info.info[0]}
-            wantedkey1="others"
-          />
-          {this.props.glassBarr && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
+              info={this.props.info.info.info[0]}
               wantedkey1="others"
-              wantedkey2="glass barrier"
             />
-          )}
-          {this.props.TypeOfWorks === "A&A" && this.props.strucChanges && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
-              wantedkey1="others"
-              wantedkey2="struc changes"
-            />
-          )}
-          {this.props.TypeOfWorks === "A&A" && this.props.extFacade && (
-            <GenerateList
-              info={this.props.info.info.info[1]}
-              wantedkey1="others"
-              wantedkey2="ext facade"
-            />
-          )}
-          <h4>
-            <u>User Customised</u>
-          </h4>
-          {this.customizedRules !== [] ? (
-            <GenerateList info={this.state.customizedRules} />
-          ) : null}
+            {this.props.glassBarr && (
+              <GenerateList
+                info={this.props.info.info.info[1]}
+                wantedkey1="others"
+                wantedkey2="glass barrier"
+              />
+            )}
+            {this.props.TypeOfWorks === "A&A" && this.props.strucChanges && (
+              <GenerateList
+                info={this.props.info.info.info[1]}
+                wantedkey1="others"
+                wantedkey2="struc changes"
+              />
+            )}
+            {this.props.TypeOfWorks === "A&A" && this.props.extFacade && (
+              <GenerateList
+                info={this.props.info.info.info[1]}
+                wantedkey1="others"
+                wantedkey2="ext facade"
+              />
+            )}
+            <h4 className="Black-background + align-left-text + padding-13 + margin-center">
+              <u>User Customised</u>
+            </h4>
+            {this.customizedRules !== [] ? (
+              <GenerateList info={this.state.customizedRules} />
+            ) : null}
 
-          <button onClick={() => this.overlayForm()}>Add to Checklist</button>
-
-          <button>Download Summary</button>
-
-          <button
-            onClick={() => {
-              this.props.onFormReset();
-              this.resetUserCus();
-            }}
-          >
-            Return to Main Page
-          </button>
+            <button
+              className="results-round-button + button-margin"
+              onClick={() => this.overlayForm()}
+            >
+              Add to Checklist
+            </button>
+          </Container>
+          <Container className="results-footer + Blue-background">
+            <Row>
+              <button className="results-round-button">Download Summary</button>
+            </Row>
+            <Row>
+              <button
+                className="results-round-button"
+                onClick={() => {
+                  this.props.onFormReset();
+                  this.resetUserCus();
+                }}
+              >
+                Return to Main Page
+              </button>
+            </Row>
+          </Container>
         </Container>
-        {this.state.overlayPage ? (
+        {this.state.overlayPage && this.customizedRules !== [] ? (
           <GenerateOverlay
             onFormsubmit={(e) => this.handleFormSubmit(e)}
             onFormChange={(e) => this.handleFormChange(e)}
+            // onBlurExit={(e) => this.handleExitOverlay(e)}
           />
         ) : null}
       </Container>

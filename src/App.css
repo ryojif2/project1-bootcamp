@@ -45,6 +45,14 @@ h4 {
   line-height: 21px;
 }
 
+.requirement-summary-text {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+}
+
 .get-started {
   display: flex;
   position: absolute;
@@ -100,6 +108,10 @@ h4 {
   text-align-last: center;
 }
 
+.align-left-text {
+  text-align: left;
+}
+
 button {
   font-family: "Inter";
   font-style: normal;
@@ -114,6 +126,65 @@ button {
   height: 100px;
   left: 0px;
   top: 0px;
+}
+
+.requirement-summary-title {
+  display: flex;
+
+  width: 100vw;
+  height: 60px;
+  left: 0px;
+  top: 0px;
+}
+
+.requirement-summary {
+  /* display: flex; */
+  padding-left: 8px;
+  padding-right: 8px;
+  /* width: 100vw;
+  height: 60px; */
+  /* left: 0px;
+  top: 0px; */
+}
+
+.results-title {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 5.92vh;
+  left: 0px;
+  top: 25vh;
+}
+
+.results-summary {
+  display: flex;
+  position: sticky;
+  width: 100vw;
+  height: 25vh;
+  left: 0px;
+  top: 0vh;
+  z-index: 50;
+}
+
+.results-body {
+  position: relative;
+  width: 100vw;
+  left: 0px;
+  top: 5.92vh;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.results-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-evenly;
+  position: relative;
+  height: 17.7vh;
+  width: 100vw;
+  left: 0px;
+  top: 17.7vh;
 }
 
 li {
@@ -170,4 +241,66 @@ li {
   font-family: "Inter";
   font-style: normal;
   font-weight: 600;
+}
+
+.results-round-button {
+  width: 85vw;
+  height: 4.7vh;
+  border-radius: 10px;
+  font-size: 17px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+}
+
+.button-margin {
+  margin-top: 5vh;
+}
+
+.table-alternate-row:nth-of-type(2n + 1) {
+  color: black;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: justify;
+  background-color: #d3d3d3;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.table-alternate-row:nth-of-type(2n) {
+  color: black;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: justify;
+  background-color: #ffffff;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.checkbox-spacing {
+  /* padding-left: 10px; */
+  width: 20px;
+}
+
+.no-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.padding-8 {
+  padding-right: 8px;
+}
+
+.padding-13 {
+  padding-left: 13px;
+}
+
+.margin-center {
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
