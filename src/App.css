@@ -153,14 +153,14 @@ button {
   width: 100vw;
   height: 5.92vh;
   left: 0px;
-  top: 25vh;
+  top: 27vh;
 }
 
 .results-summary {
   display: flex;
   position: sticky;
   width: 100vw;
-  height: 25vh;
+  height: 27vh;
   left: 0px;
   top: 0vh;
   z-index: 50;
@@ -196,10 +196,6 @@ li {
   color: rgba(0, 0, 0, 0.3);
 }
 
-/* .overlaid {
-  height: calc(100% - 30vh);
-} */
-
 .overlay {
   position: relative;
   display: inline-block;
@@ -207,7 +203,7 @@ li {
   top: -50vh;
   left: 0;
   height: 30vh;
-  width: 90vw;
+  width: 95vw;
   padding: 10px 0px;
   background-color: #112d4e;
   border-radius: 20px;
@@ -226,7 +222,7 @@ li {
 
 .add-input {
   height: 20vh;
-  width: 80vw;
+  width: 85vw;
   border-radius: 5px;
   font-size: 17px;
   font-family: "Inter";
@@ -235,7 +231,7 @@ li {
 }
 
 .full-round-button {
-  width: 80vw;
+  width: 85vw;
   border-radius: 5px;
   font-size: 17px;
   font-family: "Inter";
@@ -255,6 +251,10 @@ li {
 
 .button-margin {
   margin-top: 5vh;
+}
+
+.overlay-text-margin {
+  margin-left: 5vw;
 }
 
 .table-alternate-row:nth-of-type(2n + 1) {
@@ -303,4 +303,14 @@ li {
 .margin-center {
   margin-top: 4px;
   margin-bottom: 4px;
+}
+
+.result-summary-checkbox {
+  height: 20px;
+}
+
+.col {
+  text-align: justify;
+  place-self: center;
+  padding-left: 0;
 }

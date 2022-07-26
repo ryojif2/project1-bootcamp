@@ -19,9 +19,11 @@ export default class GenerateList extends React.Component {
     return (
       <div className="overlay">
         <form onSubmit={(e) => this.props.onFormsubmit(e)}>
-          <label>
-            <u>Description of new item</u>
-          </label>
+          <div className="align-left-text + overlay-text-margin">
+            <label>
+              <u>Description of new item</u>
+            </label>
+          </div>
           <textarea
             className="add-input"
             maxLength={140}

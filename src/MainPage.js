@@ -22,7 +22,7 @@ export default class MainPage extends React.Component {
           <Container className="main-catchline + Blue-background">
             <h4 className="text-center-padding + justify-text">
               Easily track regulations for your project and maintain a birds-eye
-              view of possible game changing conditions.
+              view of possible show stoppers.
             </h4>
           </Container>
         </Container>
