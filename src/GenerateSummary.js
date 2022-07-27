@@ -17,18 +17,18 @@ export default class GenerateSummary extends React.Component {
             </div>
             <Container className="requirement-summary-text">
               <Row>
-                <Col>
+                <Col className="results-col">
                   Type of Works: <br /> <b> {this.props.typeOfWorks} </b>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   Maximum Storey: <br /> <b>{this.props.maxStorey} Storeys </b>
                 </Col>
               </Row>
               <Row>
-                <Col>
+                <Col className="results-col">
                   Proposed GFA: <br /> <b>{this.props.proposedGFA} m2 </b>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   <form>
                     <input
                       type="checkbox"
@@ -40,7 +40,7 @@ export default class GenerateSummary extends React.Component {
                 </Col>
               </Row>
               <Row>
-                <Col>
+                <Col className="results-col">
                   <form>
                     <input
                       type="checkbox"
@@ -50,7 +50,7 @@ export default class GenerateSummary extends React.Component {
                     <label>&nbsp; Basement/Attic</label>
                   </form>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   <form>
                     <input
                       type="checkbox"
@@ -62,7 +62,7 @@ export default class GenerateSummary extends React.Component {
                 </Col>
               </Row>
               <Row>
-                <Col>
+                <Col className="results-col">
                   <form>
                     <input
                       type="checkbox"
@@ -72,7 +72,7 @@ export default class GenerateSummary extends React.Component {
                     <label>&nbsp; Glass Barrier</label>
                   </form>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   <form>
                     <input
                       type="checkbox"
@@ -84,7 +84,7 @@ export default class GenerateSummary extends React.Component {
                 </Col>
               </Row>
               <Row>
-                <Col>
+                <Col className="results-col">
                   <form>
                     <input
                       type="checkbox"
@@ -94,7 +94,7 @@ export default class GenerateSummary extends React.Component {
                     <label>&nbsp; Structural Changes</label>
                   </form>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   <form>
                     <input
                       type="checkbox"
@@ -115,28 +115,28 @@ export default class GenerateSummary extends React.Component {
             </div>
             <Container className="requirement-summary-text">
               <Row>
-                <Col>
+                <Col className="results-col">
                   Type of Works: <br />
                   <b> {this.props.typeOfWorks} </b>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   Building Type: <br /> <b>{this.props.buildingType} </b>
                 </Col>
               </Row>
               <Row>
-                <Col>
+                <Col className="results-col">
                   Maximum Storey: <br />
                   <b> {this.props.maxStorey} Storeys </b>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   Proposed GFA: <br /> <b>{this.props.proposedGFA} m2 </b>
                 </Col>
               </Row>
               <Row>
-                <Col>
+                <Col className="results-col">
                   Frontage Width: <br /> <b> {this.props.frontageWidth} m </b>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
@@ -148,7 +148,7 @@ export default class GenerateSummary extends React.Component {
                 </Col>
               </Row>
               <Row>
-                <Col>
+                <Col className="results-col">
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
@@ -158,7 +158,7 @@ export default class GenerateSummary extends React.Component {
                     <label>&nbsp; GCBA Zone</label>
                   </form>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
@@ -170,7 +170,7 @@ export default class GenerateSummary extends React.Component {
                 </Col>
               </Row>
               <Row>
-                <Col>
+                <Col className="results-col">
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
@@ -180,7 +180,7 @@ export default class GenerateSummary extends React.Component {
                     <label>&nbsp; Basement/Attic</label>
                   </form>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
@@ -192,7 +192,7 @@ export default class GenerateSummary extends React.Component {
                 </Col>
               </Row>
               <Row>
-                <Col>
+                <Col className="results-col">
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
@@ -202,7 +202,7 @@ export default class GenerateSummary extends React.Component {
                     <label>&nbsp; Lift</label>
                   </form>
                 </Col>
-                <Col>
+                <Col className="results-col">
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"

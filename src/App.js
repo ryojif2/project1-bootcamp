@@ -42,11 +42,37 @@ class App extends React.Component {
   };
 
   handleFormSubmit = (e) => {
-    this.setState({
-      showSettings: false,
-      showResults: true,
-    });
     e.preventDefault();
+    if (this.state.typeOfWorks === "New Construction") {
+      if (
+        this.state.buildingType === "" ||
+        this.state.maxStorey === "" ||
+        this.state.proposedGFA === "" ||
+        this.state.frontageWidth === "" ||
+        isNaN(this.state.proposedGFA) ||
+        isNaN(this.state.frontageWidth)
+      ) {
+        alert("Please fill up the form correctly.");
+      } else {
+        this.setState({
+          showSettings: false,
+          showResults: true,
+        });
+      }
+    } else if (this.state.typeOfWorks === "A&A") {
+      if (
+        this.state.maxStorey === "" ||
+        this.state.proposedGFA === "" ||
+        isNaN(this.state.proposedGFA)
+      ) {
+        alert("Please fill up the form correctly.");
+      } else {
+        this.setState({
+          showSettings: false,
+          showResults: true,
+        });
+      }
+    }
   };
 
   handleFormInputChange = (e) => {
@@ -105,8 +131,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
-          {console.log(this.state.maxStorey)}
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <div>
             {this.state.showMain ? (
               <MainPage
@@ -146,7 +170,6 @@ class App extends React.Component {
               />
             ) : null}
           </div>
-          {/* <div>{console.log(this.state.typeOfWorks)}</div> */}
           <div>
             {this.state.showResults ? (
               <ResultsPage

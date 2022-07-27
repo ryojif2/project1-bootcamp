@@ -69,9 +69,9 @@ export default class ResultsPage extends React.Component {
     console.log(this.state.customizedRules);
     console.log(this.state.userInput);
     return (
-      <Container className="Black-background">
-        <Container>
-          <Container className="results-summary + Blue-background">
+      <Container className="Black-background + full-width-container">
+        <Container className="full-width-container">
+          <Container className="results-summary + Blue-background + full-width-container">
             <GenerateSummary
               info={this.props.info}
               typeOfWorks={this.props.TypeOfWorks}
@@ -95,7 +95,7 @@ export default class ResultsPage extends React.Component {
             <h1 className="justify-end">Regulations</h1>
           </Container>
           <Container className="results-body">
-            <h4 className="Black-background + align-left-text + padding-13 + margin-center">
+            <h4 className="Black-background + align-left-text + padding-15 + margin-center">
               <u>External Elements</u>
             </h4>
             <GenerateList
@@ -132,7 +132,7 @@ export default class ResultsPage extends React.Component {
                   wantedkey2="frontage width less"
                 />
               )}
-            <h4 className="Black-background + align-left-text + padding-13 + margin-center">
+            <h4 className="Black-background + align-left-text + padding-15 + margin-center">
               <u>Overall Parameters of Main Building</u>
             </h4>
             <GenerateList
@@ -197,7 +197,7 @@ export default class ResultsPage extends React.Component {
                 wantedkey2="non-option"
               />
             )}
-            <h4 className="Black-background + align-left-text + padding-13 + margin-center">
+            <h4 className="Black-background + align-left-text + padding-15 + margin-center">
               <u>Internal Elements of Main Building</u>
             </h4>
             <GenerateList
@@ -255,7 +255,7 @@ export default class ResultsPage extends React.Component {
                 wantedkey2="lift"
               />
             )}
-            <h4 className="Black-background + align-left-text + padding-13 + margin-center">
+            <h4 className="Black-background + align-left-text + padding-15 + margin-center">
               <u>Other Elements</u>
             </h4>
             <GenerateList
@@ -283,7 +283,7 @@ export default class ResultsPage extends React.Component {
                 wantedkey2="ext facade"
               />
             )}
-            <h4 className="Black-background + align-left-text + padding-13 + margin-center">
+            <h4 className="Black-background + align-left-text + padding-15 + margin-center">
               <u>User Customised</u>
             </h4>
             {this.customizedRules !== [] ? (

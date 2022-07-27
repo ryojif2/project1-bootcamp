@@ -38,37 +38,49 @@ export default class SettingsForm extends React.Component {
       }
     };
     return (
-      <Container>
-        {console.log(this.props.maxStorey)}
+      <Container className="settings-container + Blue-background">
         <Container className="settings-title + Blue-background">
           <h1 className="justify-end">Settings</h1>
         </Container>
-        <Container>
-          <h4>Type of Works: {this.props.TypeOfWorks}</h4>
+        <Container className="settings-50pxht-container">
+          <h4 className="settings-headings-font + align-text-center">
+            Type of Works: {this.props.TypeOfWorks}
+          </h4>
         </Container>
         {this.props.TypeOfWorks === "A&A" && (
           <div>
             <form onSubmit={(e) => this.props.onFormsubmit(e)}>
               <Container>
-                <Row>
-                  <label>Maximum Storey: </label>
+                <Row className="alternate-100row">
+                  <label className="settings-headings-font + no-padding">
+                    Maximum Storey:{" "}
+                  </label>
                   <select
+                    className="settings-input"
                     name="maxStorey"
                     onChange={(e) => this.props.onFormChange(e)}
                   >
                     <option
+                      className="settings-options"
                       selected
                       defaultValue="none"
                       disabled
                       hidden
                     ></option>
-                    <option value="2">2 Storey</option>
-                    <option value="3">3 Storey</option>
+                    <option className="settings-options" value="2">
+                      2 Storey
+                    </option>
+                    <option className="settings-options" value="3">
+                      3 Storey
+                    </option>
                   </select>
                 </Row>
-                <Row>
-                  <label>Proposed GFA: </label>
+                <Row className="alternate-100row">
+                  <label className="settings-headings-font + no-padding">
+                    Proposed GFA:{" "}
+                  </label>
                   <input
+                    className="settings-input"
                     type="text"
                     name="proposedGFA"
                     defaultValue="Type the proposed GFA in sqm."
@@ -77,8 +89,8 @@ export default class SettingsForm extends React.Component {
                     onChange={(e) => this.props.onFormChange(e)}
                   ></input>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="treeConserv"
@@ -87,8 +99,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Tree Conservation Zone
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="lift"
@@ -97,8 +109,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Lift
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="addiGFA"
@@ -107,8 +119,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; GFA Increase
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="basementAttic"
@@ -117,8 +129,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Basement / Attic present
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="strucChange"
@@ -127,8 +139,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Structural Changes
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="extFacade"
@@ -137,8 +149,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; External Facade Changes
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="glassBarr"
@@ -147,8 +159,9 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Glass Barrier
                   </label>
                 </Row>
-                <Row>
+                <Row className="setting-submit-div + Blue-background">
                   <input
+                    className="results-round-button"
                     type="submit"
                     value="Submit"
                     // onClick={(e) => this.props.onFormsubmit(e)}
@@ -163,41 +176,65 @@ export default class SettingsForm extends React.Component {
             <form onSubmit={(e) => this.props.onFormsubmit(e)}>
               {/* <label>Type of Works: {this.props.TypeOfWorks}</label> */}
               <Container>
-                <Row>
-                  <label>Building Type: </label>
+                <Row className="alternate-100row">
+                  {/* <div className="settings-100pxht-container"> */}
+                  <label className="settings-headings-font + no-padding">
+                    Building Type:{" "}
+                  </label>
                   <select
+                    className="settings-input"
                     name="buildingType"
                     onChange={(e) => this.props.onFormChange(e)}
                   >
                     <option
+                      className="settings-options"
                       selected
                       defaultValue="none"
                       disabled
                       hidden
                     ></option>
-                    <option value="Semi-D">Semi-D</option>
-                    <option value="Detached/Bungalow">Detached/Bungalow</option>
+                    <option className="settings-options" value="Semi-D">
+                      Semi-D
+                    </option>
+                    <option
+                      className="settings-options"
+                      value="Detached/Bungalow"
+                    >
+                      Detached/Bungalow
+                    </option>
                   </select>
+                  {/* </div> */}
                 </Row>
-                <Row>
-                  <label>Maximum Storey: </label>
+                <Row className="alternate-100row">
+                  <label className="settings-headings-font + no-padding">
+                    Maximum Storey:{" "}
+                  </label>
                   <select
+                    className="settings-input"
                     name="maxStorey"
                     onChange={(e) => this.props.onFormChange(e)}
                   >
                     <option
+                      className="settings-options"
                       selected
                       defaultValue="none"
                       disabled
                       hidden
                     ></option>
-                    <option value="2">2 Storey</option>
-                    <option value="3">3 Storey</option>
+                    <option className="settings-options" value="2">
+                      2 Storey
+                    </option>
+                    <option className="settings-options" value="3">
+                      3 Storey
+                    </option>
                   </select>
                 </Row>
-                <Row>
-                  <label>Proposed GFA: </label>
+                <Row className="alternate-100row">
+                  <label className="settings-headings-font + no-padding">
+                    Proposed GFA:{" "}
+                  </label>
                   <input
+                    className="settings-input"
                     type="text"
                     name="proposedGFA"
                     defaultValue="Type the proposed GFA in sqm."
@@ -206,19 +243,22 @@ export default class SettingsForm extends React.Component {
                     onChange={(e) => this.props.onFormChange(e)}
                   ></input>
                 </Row>
-                <Row>
-                  <label>Frontage Width: </label>
+                <Row className="alternate-100row">
+                  <label className="settings-headings-font + no-padding">
+                    Frontage Width:{" "}
+                  </label>
                   <input
+                    className="settings-input"
                     type="text"
                     name="frontageWidth"
-                    defaultValue="Type the width of your development in m."
+                    defaultValue="Type the width of the development in m."
                     onFocus={(e) => onFocus(e)}
                     onBlur={(e) => onBlur(e)}
                     onChange={(e) => this.props.onFormChange(e)}
                   ></input>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="treeConserv"
@@ -227,8 +267,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Tree Conservation Zone
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="gcba"
@@ -237,8 +277,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; GCBA Zone
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="belowMPL"
@@ -247,8 +287,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Areas below MPL
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="basementAttic"
@@ -257,8 +297,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Basement / Attic present
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="solarPanel"
@@ -267,8 +307,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Solar Panel
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="lift"
@@ -277,8 +317,8 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Lift
                   </label>
                 </Row>
-                <Row>
-                  <label>
+                <Row className="alternate-row">
+                  <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
                       name="glassBarr"
@@ -287,8 +327,9 @@ export default class SettingsForm extends React.Component {
                     &nbsp;&nbsp; Glass Barrier
                   </label>
                 </Row>
-                <Row>
+                <Row className="setting-submit-div + Blue-background">
                   <input
+                    className="results-round-button"
                     type="submit"
                     value="Submit"
                     // onClick={(e) => this.props.onFormsubmit(e)}
@@ -299,9 +340,14 @@ export default class SettingsForm extends React.Component {
             {/* <button onClick={(e) => this.props.onFormsubmit(e)}>Submit</button> */}
           </div>
         )}
-        <button onClick={() => this.props.onFormReset()}>
-          Return to Main Page
-        </button>
+        <div className="setting-footer + Blue-background">
+          <button
+            className="results-round-button"
+            onClick={() => this.props.onFormReset()}
+          >
+            Return to Main Page
+          </button>
+        </div>
       </Container>
     );
   }

@@ -12,33 +12,34 @@ export default class MainPage extends React.Component {
 
   render() {
     return (
-      <Container className="Black-background">
-        {/* <p>this is the main page</p> */}
-        <Container className="Blue-background">
-          {/* <div className="main-title-top"> </div> */}
-          <Container className="main-title + Blue-background">
-            <h1 className="justify-end">Building Regulation Checklist</h1>
-          </Container>
-          <Container className="main-catchline + Blue-background">
+      <div className="Black-background">
+        <div className="Blue-background">
+          <div className="main-title + Blue-background">
+            <h1 className="justify-end center-justified">TraCORE</h1>
+          </div>
+          <div className="main-catchline + Blue-background">
             <h4 className="text-center-padding + justify-text">
               Easily track regulations for your project and maintain a birds-eye
               view of possible show stoppers.
             </h4>
-          </Container>
-        </Container>
-        <Row className="Black-background">
-          <Container className="get-started + Black-background">
+          </div>
+        </div>
+        <Row g-0 className="Black-background">
+          <div className="get-started + Black-background">
             <h4 className="text-center-padding + justify-text">
               Get started by choosing the type of works your project entails:
             </h4>
-          </Container>
-          <Container className="button-get-started + Black-background">
+          </div>
+          <div className="button-get-started + Black-background">
             <Row>
               <Col>
                 <button
                   style={{
                     ...{ height: "165px" },
                     ...{ borderRadius: "20px" },
+                    ...{
+                      width: "165px",
+                    },
                   }}
                   value="A&A"
                   onClick={this.handleClick}
@@ -59,9 +60,9 @@ export default class MainPage extends React.Component {
                 </button>
               </Col>
             </Row>
-          </Container>
+          </div>
         </Row>
-      </Container>
+      </div>
     );
   }
 }
