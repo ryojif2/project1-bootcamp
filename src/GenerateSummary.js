@@ -152,7 +152,7 @@ export default class GenerateSummary extends React.Component {
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
-                      checked={this.props.gbca === true ? true : false}
+                      checked={this.props.gcba === true ? true : false}
                       disabled={true}
                     ></input>
                     <label>&nbsp; GCBA Zone</label>

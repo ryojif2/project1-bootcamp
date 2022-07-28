@@ -69,7 +69,10 @@ export default class ResultsPage extends React.Component {
     console.log(this.state.customizedRules);
     console.log(this.state.userInput);
     return (
-      <Container className="Black-background + full-width-container">
+      <Container
+        id="divToPrint"
+        className="Black-background + full-width-container"
+      >
         <Container className="full-width-container">
           <Container className="results-summary + Blue-background + full-width-container">
             <GenerateSummary
@@ -293,13 +296,21 @@ export default class ResultsPage extends React.Component {
             <button
               className="results-round-button + button-margin"
               onClick={() => this.overlayForm()}
+              data-html2canvas-ignore="true"
             >
               Add to Checklist
             </button>
           </Container>
           <Container className="results-footer + Blue-background">
             <Row>
-              <button className="results-round-button">Download Summary</button>
+              <button
+                className="results-round-button"
+                onClick={() => {
+                  this.props.savePDF();
+                }}
+              >
+                Download Summary
+              </button>
             </Row>
             <Row>
               <button
@@ -318,7 +329,6 @@ export default class ResultsPage extends React.Component {
           <GenerateOverlay
             onFormsubmit={(e) => this.handleFormSubmit(e)}
             onFormChange={(e) => this.handleFormChange(e)}
-            // onBlurExit={(e) => this.handleExitOverlay(e)}
           />
         ) : null}
       </Container>

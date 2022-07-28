@@ -15,11 +15,15 @@ export default class MainPage extends React.Component {
       <div className="Black-background">
         <div className="Blue-background">
           <div className="main-title + Blue-background">
-            <h1 className="justify-end center-justified">TraCORE</h1>
+            <h1 className="justify-end center-justified logo-font">
+              <i>
+                Ar<b>core</b>
+              </i>
+            </h1>
           </div>
           <div className="main-catchline + Blue-background">
-            <h4 className="text-center-padding + justify-text">
-              A construction regulation checklist for Architects
+            <h4 className="text-center-padding + justify-text + center-justified">
+              Construction Regulation Checklist for Architects
             </h4>
           </div>
         </div>

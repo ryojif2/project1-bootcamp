@@ -133,7 +133,7 @@ export default class SettingsForm extends React.Component {
                   <label className="settings-headings-font + settings-50pxht-container + align-item-center">
                     <input
                       type="checkbox"
-                      name="strucChange"
+                      name="strucChanges"
                       onChange={(e) => this.props.onFormChange(e)}
                     ></input>
                     &nbsp;&nbsp; Structural Changes
