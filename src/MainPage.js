@@ -16,14 +16,14 @@ export default class MainPage extends React.Component {
         <div className="Blue-background">
           <div className="main-title + Blue-background">
             <h1 className="justify-end center-justified logo-font">
-              <i>
-                Ar<b>core</b>
-              </i>
+              <b>
+                Code <i>A</i>
+              </b>
             </h1>
           </div>
           <div className="main-catchline + Blue-background">
             <h4 className="text-center-padding + justify-text + center-justified">
-              Construction Regulation Checklist for Architects
+              Construction Code Checklist for Architects
             </h4>
           </div>
         </div>
