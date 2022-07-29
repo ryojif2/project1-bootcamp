@@ -17,10 +17,10 @@
   margin-right: "auto";
 }
 
-/* .html2canvas-container {
+.html2canvas-container {
   width: 3000px !important;
   height: 3000px !important;
-} */
+}
 /*Dont use this setting. It zooms in on only the top left portion of the screen.*/
 
 .App-logo {

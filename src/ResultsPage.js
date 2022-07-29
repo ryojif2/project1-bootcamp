@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import GenerateSummary from "./GenerateSummary.js";
 import GenerateList from "./GenerateList.js";
 import GenerateOverlay from "./GenerateOverlay.js";
+// import NodemailerApp from "./nodemailer-form.js";
 
 export default class ResultsPage extends React.Component {
   constructor(props) {
@@ -307,6 +308,7 @@ export default class ResultsPage extends React.Component {
                 className="results-round-button"
                 onClick={() => {
                   this.props.savePDF();
+                  // NodemailerApp();
                 }}
               >
                 Download Summary
@@ -331,6 +333,7 @@ export default class ResultsPage extends React.Component {
             onFormChange={(e) => this.handleFormChange(e)}
           />
         ) : null}
+        {/* <NodemailerApp/> */}
       </Container>
     );
   }

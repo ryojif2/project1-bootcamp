@@ -77,8 +77,8 @@ class App extends React.Component {
       // windowWidth: 3000,
       // scrollX: -window.scrollX,
       // scrollY: -window.scrollY,
-      // windowWidth: document.documentElement.offsetWidth,
-      // windowHeight: document.documentElement.offsetHeight,
+      windowWidth: document.documentElement.offsetWidth,
+      windowHeight: document.documentElement.offsetHeight,
     }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jsPDF();
