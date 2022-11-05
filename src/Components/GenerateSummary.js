@@ -7,10 +7,9 @@ export default class GenerateSummary extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <Container className="requirement-summary">
-        {this.props.typeOfWorks === "A&A" && (
+        {this.props.childStates.typeOfWorks === "A&A" && (
           <div>
             <div className="requirement-summary-title">
               <h4 className="justify-end">Requirements Summary</h4>
@@ -18,21 +17,28 @@ export default class GenerateSummary extends React.Component {
             <Container className="requirement-summary-text">
               <Row>
                 <Col className="results-col">
-                  Type of Works: <br /> <b> {this.props.typeOfWorks} </b>
+                  Type of Works: <br />{" "}
+                  <b> {this.props.childStates.typeOfWorks} </b>
                 </Col>
                 <Col className="results-col">
-                  Maximum Storey: <br /> <b>{this.props.maxStorey} Storeys </b>
+                  Maximum Storey: <br />{" "}
+                  <b>{this.props.childStates.maxStorey} Storeys </b>
                 </Col>
               </Row>
               <Row>
                 <Col className="results-col">
-                  Proposed GFA: <br /> <b>{this.props.proposedGFA} m2 </b>
+                  Proposed GFA: <br />{" "}
+                  <b>{this.props.childStates.proposedGFA} m2 </b>
                 </Col>
                 <Col className="results-col">
                   <form>
                     <input
                       type="checkbox"
-                      checked={this.props.treeConserv === true ? true : false}
+                      checked={
+                        this.props.childStates.treeConserv === true
+                          ? true
+                          : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Tree Conservation </label>
@@ -44,7 +50,11 @@ export default class GenerateSummary extends React.Component {
                   <form>
                     <input
                       type="checkbox"
-                      checked={this.props.basementAttic === true ? true : false}
+                      checked={
+                        this.props.childStates.basementAttic === true
+                          ? true
+                          : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Basement/Attic</label>
@@ -54,7 +64,9 @@ export default class GenerateSummary extends React.Component {
                   <form>
                     <input
                       type="checkbox"
-                      checked={this.props.lift === true ? true : false}
+                      checked={
+                        this.props.childStates.lift === true ? true : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Lift</label>
@@ -66,7 +78,9 @@ export default class GenerateSummary extends React.Component {
                   <form>
                     <input
                       type="checkbox"
-                      checked={this.props.glassBarr === true ? true : false}
+                      checked={
+                        this.props.childStates.glassBarr === true ? true : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Glass Barrier</label>
@@ -76,7 +90,9 @@ export default class GenerateSummary extends React.Component {
                   <form>
                     <input
                       type="checkbox"
-                      checked={this.props.addiGFA === true ? true : false}
+                      checked={
+                        this.props.childStates.addiGFA === true ? true : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Additional GFA</label>
@@ -88,7 +104,11 @@ export default class GenerateSummary extends React.Component {
                   <form>
                     <input
                       type="checkbox"
-                      checked={this.props.strucChanges === true ? true : false}
+                      checked={
+                        this.props.childStates.strucChanges === true
+                          ? true
+                          : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Structural Changes</label>
@@ -98,7 +118,9 @@ export default class GenerateSummary extends React.Component {
                   <form>
                     <input
                       type="checkbox"
-                      checked={this.props.extFacade === true ? true : false}
+                      checked={
+                        this.props.childStates.extFacade === true ? true : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Ext Facade Changes</label>
@@ -108,7 +130,7 @@ export default class GenerateSummary extends React.Component {
             </Container>
           </div>
         )}
-        {this.props.typeOfWorks === "New Construction" && (
+        {this.props.childStates.typeOfWorks === "New Construction" && (
           <div>
             <div className="requirement-summary-title">
               <h4 className="justify-end">Requirements Summary</h4>
@@ -117,30 +139,37 @@ export default class GenerateSummary extends React.Component {
               <Row>
                 <Col className="results-col">
                   Type of Works: <br />
-                  <b> {this.props.typeOfWorks} </b>
+                  <b> {this.props.childStates.typeOfWorks} </b>
                 </Col>
                 <Col className="results-col">
-                  Building Type: <br /> <b>{this.props.buildingType} </b>
+                  Building Type: <br />{" "}
+                  <b>{this.props.childStates.buildingType} </b>
                 </Col>
               </Row>
               <Row>
                 <Col className="results-col">
                   Maximum Storey: <br />
-                  <b> {this.props.maxStorey} Storeys </b>
+                  <b> {this.props.childStates.maxStorey} Storeys </b>
                 </Col>
                 <Col className="results-col">
-                  Proposed GFA: <br /> <b>{this.props.proposedGFA} m2 </b>
+                  Proposed GFA: <br />{" "}
+                  <b>{this.props.childStates.proposedGFA} m2 </b>
                 </Col>
               </Row>
               <Row>
                 <Col className="results-col">
-                  Frontage Width: <br /> <b> {this.props.frontageWidth} m </b>
+                  Frontage Width: <br />{" "}
+                  <b> {this.props.childStates.frontageWidth} m </b>
                 </Col>
                 <Col className="results-col">
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
-                      checked={this.props.treeConserv === true ? true : false}
+                      checked={
+                        this.props.childStates.treeConserv === true
+                          ? true
+                          : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Tree Conservation </label>
@@ -152,7 +181,9 @@ export default class GenerateSummary extends React.Component {
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
-                      checked={this.props.gcba === true ? true : false}
+                      checked={
+                        this.props.childStates.gcba === true ? true : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; GCBA Zone</label>
@@ -162,7 +193,9 @@ export default class GenerateSummary extends React.Component {
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
-                      checked={this.props.belowMPL === true ? true : false}
+                      checked={
+                        this.props.childStates.belowMPL === true ? true : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Areas Below MPL</label>
@@ -174,7 +207,11 @@ export default class GenerateSummary extends React.Component {
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
-                      checked={this.props.basementAttic === true ? true : false}
+                      checked={
+                        this.props.childStates.basementAttic === true
+                          ? true
+                          : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Basement/Attic</label>
@@ -184,7 +221,11 @@ export default class GenerateSummary extends React.Component {
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
-                      checked={this.props.solarPanel === true ? true : false}
+                      checked={
+                        this.props.childStates.solarPanel === true
+                          ? true
+                          : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Solar Panel</label>
@@ -196,7 +237,9 @@ export default class GenerateSummary extends React.Component {
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
-                      checked={this.props.lift === true ? true : false}
+                      checked={
+                        this.props.childStates.lift === true ? true : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Lift</label>
@@ -206,7 +249,9 @@ export default class GenerateSummary extends React.Component {
                   <form className="result-summary-checkbox">
                     <input
                       type="checkbox"
-                      checked={this.props.glassBarr === true ? true : false}
+                      checked={
+                        this.props.childStates.glassBarr === true ? true : false
+                      }
                       disabled={true}
                     ></input>
                     <label>&nbsp; Glass Barrier</label>

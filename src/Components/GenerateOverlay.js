@@ -1,10 +1,10 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 
 export default class GenerateList extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     const onBlur = (e) => {
       if (e.target.value === "") {

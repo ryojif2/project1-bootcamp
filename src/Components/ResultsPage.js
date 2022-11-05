@@ -1,9 +1,8 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import GenerateSummary from "./GenerateSummary.js";
 import GenerateList from "./GenerateList.js";
 import GenerateOverlay from "./GenerateOverlay.js";
-// import NodemailerApp from "./nodemailer-form.js";
 
 export default class ResultsPage extends React.Component {
   constructor(props) {
@@ -41,7 +40,6 @@ export default class ResultsPage extends React.Component {
         ...this.state.customizedRules,
         this.state.userInput,
       ];
-      console.log(updatedUserList);
       this.setState({
         showResults: true,
         overlayPage: false,
@@ -61,14 +59,7 @@ export default class ResultsPage extends React.Component {
     });
   };
 
-  // fs is inbuilt into node js.
-  //use fs in react. Change files on my com using code.
-  //json file is a file. fsreadfile the json file to read all my data.
-  //add to end of string to apend the new rule.
-  //fswritefile.
   render() {
-    console.log(this.state.customizedRules);
-    console.log(this.state.userInput);
     return (
       <Container
         id="divToPrint"
@@ -76,24 +67,7 @@ export default class ResultsPage extends React.Component {
       >
         <Container className="full-width-container">
           <Container className="results-summary + Blue-background + full-width-container">
-            <GenerateSummary
-              info={this.props.info}
-              typeOfWorks={this.props.TypeOfWorks}
-              buildingType={this.props.buildingType}
-              maxStorey={this.props.maxStorey}
-              proposedGFA={this.props.proposedGFA}
-              frontageWidth={this.props.frontageWidth}
-              gcba={this.props.gcba}
-              belowMPL={this.props.belowMPL}
-              basementAttic={this.props.basementAttic}
-              solarPanel={this.props.solarPanel}
-              lift={this.props.lift}
-              glassBarr={this.props.glassBarr}
-              treeConserv={this.props.treeConserv}
-              addiGFA={this.props.addiGFA}
-              strucChanges={this.props.strucChanges}
-              extFacade={this.props.extFacade}
-            />
+            <GenerateSummary childStates={this.props.childStates} />
           </Container>
           <Container className="results-title + Black-background">
             <h1 className="justify-end">Regulations</h1>
@@ -106,30 +80,30 @@ export default class ResultsPage extends React.Component {
               info={this.props.info.info.info[0]}
               wantedkey1="external"
             />
-            {this.props.treeConserv && (
+            {this.props.childStates.treeConserv && (
               <GenerateList
                 info={this.props.info.info.info[1]}
                 wantedkey1="external"
                 wantedkey2="tree conserv"
               />
             )}
-            {this.props.TypeOfWorks === "New Construction" && (
+            {this.props.childStates.typeOfWorks === "New Construction" && (
               <GenerateList
                 info={this.props.info.info.info[2]}
                 wantedkey1="external"
                 wantedkey2="non-option"
               />
             )}
-            {this.props.TypeOfWorks === "New Construction" &&
-              this.props.frontageWidth >= 8 && (
+            {this.props.childStates.typeOfWorks === "New Construction" &&
+              this.props.childStates.frontageWidth >= 8 && (
                 <GenerateList
                   info={this.props.info.info.info[2]}
                   wantedkey1="external"
                   wantedkey2="frontage width 8"
                 />
               )}
-            {this.props.TypeOfWorks === "New Construction" &&
-              this.props.frontageWidth < 8 && (
+            {this.props.childStates.typeOfWorks === "New Construction" &&
+              this.props.childStates.frontageWidth < 8 && (
                 <GenerateList
                   info={this.props.info.info.info[2]}
                   wantedkey1="external"
@@ -143,58 +117,59 @@ export default class ResultsPage extends React.Component {
               info={this.props.info.info.info[0]}
               wantedkey1="overall"
             />
-            {this.props.maxStorey === "2" && (
+            {this.props.childStates.maxStorey === "2" && (
               <GenerateList
                 info={this.props.info.info.info[1]}
                 wantedkey1="overall"
                 wantedkey2="height 2"
               />
             )}
-            {this.props.maxStorey === "3" && (
+            {this.props.childStates.maxStorey === "3" && (
               <GenerateList
                 info={this.props.info.info.info[1]}
                 wantedkey1="overall"
                 wantedkey2="height 3"
               />
             )}
-            {this.props.proposedGFA >= 5000 && (
+            {this.props.childStates.proposedGFA >= 5000 && (
               <GenerateList
                 info={this.props.info.info.info[1]}
                 wantedkey1="overall"
                 wantedkey2="gfa 5000"
               />
             )}
-            {this.props.TypeOfWorks === "A&A" && this.props.addiGFA && (
-              <GenerateList
-                info={this.props.info.info.info[1]}
-                wantedkey1="overall"
-                wantedkey2="gfa addi"
-              />
-            )}
-            {this.props.TypeOfWorks === "A&A" && (
+            {this.props.childStates.typeOfWorks === "A&A" &&
+              this.props.childStates.addiGFA && (
+                <GenerateList
+                  info={this.props.info.info.info[1]}
+                  wantedkey1="overall"
+                  wantedkey2="gfa addi"
+                />
+              )}
+            {this.props.childStates.typeOfWorks === "A&A" && (
               <GenerateList
                 info={this.props.info.info.info[1]}
                 wantedkey1="overall"
                 wantedkey2="non-option"
               />
             )}
-            {this.props.TypeOfWorks === "New Construction" &&
-              !this.props.gcba && (
+            {this.props.childStates.typeOfWorks === "New Construction" &&
+              !this.props.childStates.gcba && (
                 <GenerateList
                   info={this.props.info.info.info[2]}
                   wantedkey1="overall"
                   wantedkey2="non-gcba"
                 />
               )}
-            {this.props.TypeOfWorks === "New Construction" &&
-              this.props.gcba && (
+            {this.props.childStates.typeOfWorks === "New Construction" &&
+              this.props.childStates.gcba && (
                 <GenerateList
                   info={this.props.info.info.info[3]}
                   wantedkey1="overall"
                   wantedkey2="gcba"
                 />
               )}
-            {this.props.TypeOfWorks === "New Construction" && (
+            {this.props.childStates.typeOfWorks === "New Construction" && (
               <GenerateList
                 info={this.props.info.info.info[2]}
                 wantedkey1="overall"
@@ -208,51 +183,53 @@ export default class ResultsPage extends React.Component {
               info={this.props.info.info.info[0]}
               wantedkey1="internal"
             />
-            {this.props.TypeOfWorks === "A&A" && (
+            {this.props.childStates.typeOfWorks === "A&A" && (
               <GenerateList
                 info={this.props.info.info.info[1]}
                 wantedkey1="internal"
                 wantedkey2="non-option"
               />
             )}
-            {this.props.TypeOfWorks === "A&A" && this.props.basementAttic && (
-              <GenerateList
-                info={this.props.info.info.info[1]}
-                wantedkey1="internal"
-                wantedkey2="basement attic"
-              />
-            )}
-            {this.props.TypeOfWorks === "A&A" && this.props.solarPanel && (
-              <GenerateList
-                info={this.props.info.info.info[1]}
-                wantedkey1="internal"
-                wantedkey2="solar"
-              />
-            )}
-            {this.props.TypeOfWorks === "New Construction" && (
+            {this.props.childStates.typeOfWorks === "A&A" &&
+              this.props.childStates.basementAttic && (
+                <GenerateList
+                  info={this.props.info.info.info[1]}
+                  wantedkey1="internal"
+                  wantedkey2="basement attic"
+                />
+              )}
+            {this.props.childStates.typeOfWorks === "A&A" &&
+              this.props.childStates.solarPanel && (
+                <GenerateList
+                  info={this.props.info.info.info[1]}
+                  wantedkey1="internal"
+                  wantedkey2="solar"
+                />
+              )}
+            {this.props.childStates.typeOfWorks === "New Construction" && (
               <GenerateList
                 info={this.props.info.info.info[2]}
                 wantedkey1="internal"
                 wantedkey2="non-option"
               />
             )}
-            {this.props.TypeOfWorks === "New Construction" &&
-              this.props.basementAttic && (
+            {this.props.childStates.typeOfWorks === "New Construction" &&
+              this.props.childStates.basementAttic && (
                 <GenerateList
                   info={this.props.info.info.info[2]}
                   wantedkey1="internal"
                   wantedkey2="basement attic"
                 />
               )}
-            {this.props.TypeOfWorks === "New Construction" &&
-              this.props.solarPanel && (
+            {this.props.childStates.typeOfWorks === "New Construction" &&
+              this.props.childStates.solarPanel && (
                 <GenerateList
                   info={this.props.info.info.info[2]}
                   wantedkey1="internal"
                   wantedkey2="solar"
                 />
               )}
-            {this.props.lift && (
+            {this.props.childStates.lift && (
               <GenerateList
                 info={this.props.info.info.info[1]}
                 wantedkey1="internal"
@@ -266,27 +243,29 @@ export default class ResultsPage extends React.Component {
               info={this.props.info.info.info[0]}
               wantedkey1="others"
             />
-            {this.props.glassBarr && (
+            {this.props.childStates.glassBarr && (
               <GenerateList
                 info={this.props.info.info.info[1]}
                 wantedkey1="others"
                 wantedkey2="glass barrier"
               />
             )}
-            {this.props.TypeOfWorks === "A&A" && this.props.strucChanges && (
-              <GenerateList
-                info={this.props.info.info.info[1]}
-                wantedkey1="others"
-                wantedkey2="struc changes"
-              />
-            )}
-            {this.props.TypeOfWorks === "A&A" && this.props.extFacade && (
-              <GenerateList
-                info={this.props.info.info.info[1]}
-                wantedkey1="others"
-                wantedkey2="ext facade"
-              />
-            )}
+            {this.props.childStates.typeOfWorks === "A&A" &&
+              this.props.childStates.strucChanges && (
+                <GenerateList
+                  info={this.props.info.info.info[1]}
+                  wantedkey1="others"
+                  wantedkey2="struc changes"
+                />
+              )}
+            {this.props.childStates.typeOfWorks === "A&A" &&
+              this.props.childStates.extFacade && (
+                <GenerateList
+                  info={this.props.info.info.info[1]}
+                  wantedkey1="others"
+                  wantedkey2="ext facade"
+                />
+              )}
             <h4 className="Black-background + align-left-text + padding-15 + margin-center">
               <u>User Customised</u>
             </h4>
@@ -308,7 +287,6 @@ export default class ResultsPage extends React.Component {
                 className="results-round-button"
                 onClick={() => {
                   this.props.savePDF();
-                  // NodemailerApp();
                 }}
               >
                 Download Summary
@@ -333,7 +311,6 @@ export default class ResultsPage extends React.Component {
             onFormChange={(e) => this.handleFormChange(e)}
           />
         ) : null}
-        {/* <NodemailerApp/> */}
       </Container>
     );
   }

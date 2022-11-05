@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 export default class MainPage extends React.Component {
   constructor(props) {
@@ -30,7 +30,6 @@ export default class MainPage extends React.Component {
         <Row g-0 className="Black-background">
           <div className="get-started + Black-background">
             <h4 className="text-center-padding + justify-text">
-              {/* Get started by choosing the type of works your project entails: */}
               Easily track regulations for your project and maintain a birds-eye
               view of possible show stoppers.
             </h4>

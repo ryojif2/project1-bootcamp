@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 export default class GenerateList extends React.Component {
   constructor(props) {
@@ -10,8 +10,6 @@ export default class GenerateList extends React.Component {
   }
 
   handleCheck = (event) => {
-    console.log(this.state.checked);
-    console.log(event.target.value);
     var updatedList = [...this.state.checked];
     if (event.target.checked) {
       updatedList = [...this.state.checked, event.target.value];

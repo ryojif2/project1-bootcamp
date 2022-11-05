@@ -1,11 +1,9 @@
 import React from "react";
-import logo from "./logo.png";
-import { Container, Row, Col } from "react-bootstrap";
 import "./App.css";
-import info from "./info.json";
-import MainPage from "./MainPage.js";
-import SettingsForm from "./SettingsForm.js";
-import ResultsPage from "./ResultsPage.js";
+import info from "./DB/info.json";
+import MainPage from "./Components/MainPage.js";
+import SettingsForm from "./Components/SettingsForm.js";
+import ResultsPage from "./Components/ResultsPage.js";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
@@ -31,41 +29,10 @@ class App extends React.Component {
       addiGFA: false,
       strucChanges: false,
       extFacade: false,
-      // customizedRules: [],
     };
   }
 
-  // genPDF() {
-  //   var deferreds = [];
-  //   var doc = new jsPDF();
-  //   var numberOfInnerDivs = $(".divToPrint").children("div").length;
-  //   for (let i = 1; i < numberOfInnerDivs; i++) {
-  //     var deferred = $.Deferred();
-  //     deferreds.push(deferred.promise());
-  //     generateCanvas(i, doc, deferred);
-  //   }
-
-  //   $.when.apply($, deferreds).then(function () {
-  //     // executes after adding all images
-  //     doc.save("test.pdf");
-  //   });
-  // }
-
-  // generateCanvas(i, doc, deferred) {
-  //   html2canvas(document.getElementById("divToPrint" + i), {
-  //     onrendered: function (canvas) {
-  //       var img = canvas.toDataURL();
-  //       doc.addImage(img, "PNG");
-  //       doc.addPage();
-
-  //       deferred.resolve();
-  //     },
-  //   });
-  // }
-
   printDocument() {
-    // document.getElementById("divToPrint").parentNode.style.overflow = "visible";
-    // Window.resizeTo(window.screen.height, window.screen.height);
     const input = document.getElementById("divToPrint");
     html2canvas(input, {
       width: 4000,
@@ -73,10 +40,6 @@ class App extends React.Component {
       scale: 0.57,
       x: -35,
 
-      // windowHeight: 3000,
-      // windowWidth: 3000,
-      // scrollX: -window.scrollX,
-      // scrollY: -window.scrollY,
       windowWidth: document.documentElement.offsetWidth,
       windowHeight: document.documentElement.offsetHeight,
     }).then((canvas) => {
@@ -161,26 +124,8 @@ class App extends React.Component {
     });
   };
 
-  // handleMaxStoreyChange = (input) => {
-  //   // const value = input.target.value;
-  //   // const name = input.target.name;
-  //   this.setState({
-  //     maxStorey: input,
-  //   });
-  // };
-
   render() {
     const infoImport = { info };
-    console.log(info);
-
-    console.log(this.state.maxStorey);
-    console.log(this.state.buildingType);
-    console.log(this.state.proposedGFA);
-    console.log(this.state.gcba);
-    console.log(this.state.belowMPL);
-    const maxStorey = this.state.maxStorey;
-    const buildingType = this.state.buildingType;
-    const proposedGFA = this.state.proposedGFA;
 
     return (
       <div className="App">
@@ -199,27 +144,8 @@ class App extends React.Component {
             <div>
               {this.state.showSettings ? (
                 <SettingsForm
-                  ShowSettings={this.state.showSettings}
-                  TypeOfWorks={this.state.typeOfWorks}
-                  ShowResults={this.state.showResults}
-                  buildingType={buildingType}
-                  maxStorey={maxStorey}
-                  proposedGFA={this.state.proposedGFA}
-                  frontageWidth={this.state.frontageWidth}
-                  gcba={this.state.gcba}
-                  belowMPL={this.state.belowMPL}
-                  basementAttic={this.state.basementAttic}
-                  solarPanel={this.state.solarPanel}
-                  lift={this.state.lift}
-                  glassBarr={this.state.glassBarr}
-                  treeConserv={this.state.treeConserv}
-                  addiGFA={this.state.addiGFA}
-                  strucChanges={this.state.strucChanges}
-                  extFacade={this.state.extFacade}
+                  childStates={this.state}
                   onFormChange={(e) => this.handleFormInputChange(e)}
-                  //onFormChange={this.handleFormInputChange}
-                  // onMaxStoreyChange={this.handleMaxStoreyChange}
-                  //
                   onFormsubmit={(e) => this.handleFormSubmit(e)}
                   onFormReset={(e) => this.handleReset(e)}
                 />
@@ -229,23 +155,7 @@ class App extends React.Component {
               {this.state.showResults ? (
                 <ResultsPage
                   info={infoImport}
-                  ShowMain={this.state.showMain}
-                  TypeOfWorks={this.state.typeOfWorks}
-                  ShowResults={this.state.showResults}
-                  buildingType={buildingType}
-                  maxStorey={maxStorey}
-                  proposedGFA={this.state.proposedGFA}
-                  frontageWidth={this.state.frontageWidth}
-                  gcba={this.state.gcba}
-                  belowMPL={this.state.belowMPL}
-                  basementAttic={this.state.basementAttic}
-                  solarPanel={this.state.solarPanel}
-                  lift={this.state.lift}
-                  glassBarr={this.state.glassBarr}
-                  treeConserv={this.state.treeConserv}
-                  addiGFA={this.state.addiGFA}
-                  strucChanges={this.state.strucChanges}
-                  extFacade={this.state.extFacade}
+                  childStates={this.state}
                   customizedRules={this.state.customizedRules}
                   onFormReset={(e) => this.handleReset(e)}
                   savePDF={(e) => this.printDocument(e)}

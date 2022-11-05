@@ -1,30 +1,10 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 
 export default class SettingsForm extends React.Component {
   constructor(props) {
     super(props);
   }
-
-  // handleSubmit = (e) => {
-  //   this.props.onFormSubmit(e.target.value);
-  //   e.preventDefault();
-  // };
-
-  // handleMaxStoreyChange = (e) => {
-  //   const value = e.target.value;
-  //   this.props.onMaxStoreyChange(value);
-  //   console.log(this.props.onMaxStoreyChange(value));
-  // };
-
-  // handleChange = (e) => {
-  //   const value = e.target.value;
-  //   console.log(value);
-  //   const name = e.target.name;
-  //   console.log(name);
-  //   this.props.onFormChange({ [name]: value });
-  //   // console.log(this.props.onFormChange({ [name]: value }));
-  // };
 
   render() {
     const onBlur = (e) => {
@@ -44,10 +24,10 @@ export default class SettingsForm extends React.Component {
         </Container>
         <Container className="settings-50pxht-container">
           <h4 className="settings-headings-font + align-text-center">
-            Type of Works: {this.props.TypeOfWorks}
+            Type of Works: {this.props.childStates.typeOfWorks}
           </h4>
         </Container>
-        {this.props.TypeOfWorks === "A&A" && (
+        {this.props.childStates.typeOfWorks === "A&A" && (
           <div>
             <form onSubmit={(e) => this.props.onFormsubmit(e)}>
               <Container>
@@ -164,20 +144,17 @@ export default class SettingsForm extends React.Component {
                     className="results-round-button"
                     type="submit"
                     value="Submit"
-                    // onClick={(e) => this.props.onFormsubmit(e)}
                   ></input>
                 </Row>
               </Container>
             </form>
           </div>
         )}
-        {this.props.TypeOfWorks === "New Construction" && (
+        {this.props.childStates.typeOfWorks === "New Construction" && (
           <div>
             <form onSubmit={(e) => this.props.onFormsubmit(e)}>
-              {/* <label>Type of Works: {this.props.TypeOfWorks}</label> */}
               <Container>
                 <Row className="alternate-100row">
-                  {/* <div className="settings-100pxht-container"> */}
                   <label className="settings-headings-font + no-padding">
                     Building Type:{" "}
                   </label>
@@ -203,7 +180,6 @@ export default class SettingsForm extends React.Component {
                       Detached/Bungalow
                     </option>
                   </select>
-                  {/* </div> */}
                 </Row>
                 <Row className="alternate-100row">
                   <label className="settings-headings-font + no-padding">
@@ -332,12 +308,10 @@ export default class SettingsForm extends React.Component {
                     className="results-round-button"
                     type="submit"
                     value="Submit"
-                    // onClick={(e) => this.props.onFormsubmit(e)}
                   ></input>
                 </Row>
               </Container>
             </form>
-            {/* <button onClick={(e) => this.props.onFormsubmit(e)}>Submit</button> */}
           </div>
         )}
         <div className="setting-footer + Blue-background">
