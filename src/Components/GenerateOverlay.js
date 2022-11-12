@@ -4,7 +4,8 @@ export default class GenerateList extends React.Component {
   constructor(props) {
     super(props);
   }
-
+  // It is better to have constructor props super props, even though its not needed for the latest version, if i have no state.
+  // Because if person doesnt have latest version of react, it needs to be there, to pass props.
   render() {
     const onBlur = (e) => {
       if (e.target.value === "") {

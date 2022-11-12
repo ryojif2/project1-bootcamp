@@ -88,3 +88,6 @@ export default class GenerateList extends React.Component {
     );
   }
 }
+
+// Try to use more of in-built bootstrap utils for e.g. padding-8 @ line74.
+// p-0 p-5 etc.

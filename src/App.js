@@ -7,6 +7,13 @@ import ResultsPage from "./Components/ResultsPage.js";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
+//COMMENT POST PROJECT 030822
+// OVERALL
+// Remove any code that is not needed.
+// After development is concluded, remove console.log, remove notes etc unless necessary.
+// Many stuff in state. Passing props. See below!!
+//In SRC folder create component directory, db directory. Move every component that is not app.js and index.js into the component directory. Line 9 shows how to change the import names.
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -144,6 +151,9 @@ class App extends React.Component {
             <div>
               {this.state.showSettings ? (
                 <SettingsForm
+                  // I can just pass all props to child component without stating each one of them!!
+                  // I can only do this for states! Not for functions.
+                  //to access in child, props.randomObj.showSettings in the child..
                   childStates={this.state}
                   onFormChange={(e) => this.handleFormInputChange(e)}
                   onFormsubmit={(e) => this.handleFormSubmit(e)}

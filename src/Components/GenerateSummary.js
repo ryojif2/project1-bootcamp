@@ -6,6 +6,13 @@ export default class GenerateSummary extends React.Component {
     super(props);
   }
 
+  // Create a component for each "row".
+  //do Object.entries on only states. Object.entries(this.props.randomObj)
+  //object.entries to get the values of my state props.
+  // Object.entries will take each key and value pair, and add into an array of objects.
+  // Deconstruct the keys and values. [0] position for key and [1] position for value.
+  // map through and pass to my component.
+
   render() {
     return (
       <Container className="requirement-summary">

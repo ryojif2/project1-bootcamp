@@ -59,6 +59,23 @@ export default class ResultsPage extends React.Component {
     });
   };
 
+  // Create a component for each "row".
+  //do Object.entries on only states of the props i have passed down. Object.entries(this.props.randomObj)
+  //object.entries to get the values of my state props.
+  // Object.entries will take each key and value pair, and add into an array of objects.
+  // Deconstruct the keys and values. [0] position for key(state name) and [1] position for value (true or false).
+  // map through and pass to my components.
+
+  //use filter function after i get the array.
+  // if index position 1 is true, then filter function to automatically add the relevant data from json file to the filter array, and display everything from the filtered array.
+  //LOOK AT FILTER FUNCTION MDN.
+  //map, reduce, filter functions. <<< Learn!!
+
+  // fs is inbuilt into node js.
+  //use fs in react. Change files on my com using code.
+  //json file is a file. fsreadfile the json file to read all my data.
+  //add to end of string to apend the new rule.
+  //fswritefile.
   render() {
     return (
       <Container
